@@ -13,13 +13,13 @@ $ npm install
 to compile your smart contract to get an ABI and artifact of a smart contract.
 
 ```bash
-$ npm run compile
+$ npx hardhat compile
 ```
 
 for a unit testing smart contract using the command line.
 
 ```
-$ npm run test
+$ npx hardhat test
 ```
 expecting `sample-test.js` result.
 ```bash  
@@ -28,9 +28,9 @@ expecting `sample-test.js` result.
 after testing if you want to deploy the contract using the command line.
 
 ```bash
-$ npm run test-rpc
+$ npx hardhat node
 # Open another Terminal
-$ npm run deploy-local
+$ npx hardhat
 # result in npx hardhat node Terminal
 
 # result in npx hardhat run Terminal
