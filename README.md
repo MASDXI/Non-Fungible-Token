@@ -1,8 +1,5 @@
-# Initial Coin Offering (ICO) contract
+# Non Fungible Token (NFT) contract
 
-Tutorial using Hardhat(Buidler) to complie, deploy and automated unit tests Solidity smart contract.  
-you use this repository as Initial Coin Offering (ICO) contract template or ERC20 template.  
-Read this in other languages: [English](README.md), [ไทย](README.th.md)  
 To run these tutorials, you must have the following installed:
 
 - [nodejs](https://nodejs.org/en/)
@@ -25,60 +22,19 @@ for a unit testing smart contract using the command line.
 $ npm run test
 ```
 expecting `sample-test.js` result.
-```bash
-
-  Initial Coin Offering (ICO) contract
-    ✓ Assigns initial balance (97ms)
-    ✓ Do not have permission to minting token (95ms)
-    ✓ Do not have permission to burning token (74ms)
-    ✓ Buy token with ether (212ms)
-    ✓ Do not have permission to withdraw ether from contract (69ms)
-    ✓ Transfer adds amount to destination account (99ms)
-    ✓ Transfer emits event (132ms)
-    ✓ Can not transfer above the amount (63ms)
-    ✓ Can not transfer from empty account (77ms)
-    ✓ Minting token (100ms)
-    ✓ Burning token (73ms)
-    ✓ Withdraw ether from contract (61ms)
-    ✓ Do not have have enough ether to buy token
-
-
-  x passing (x s)
-
+```bash  
 ```
 
 after testing if you want to deploy the contract using the command line.
 
 ```bash
-
 $ npm run test-rpc
 # Open another Terminal
 $ npm run deploy-local
-
 # result in npx hardhat node Terminal
-web3_clientVersion
-eth_chainId
-eth_accounts
-eth_chainId
-eth_estimateGas
-eth_gasPrice
-eth_sendTransaction
-  Contract deployment: <UnrecognizedContract>
-  Contract address:    0x5fb...aa3
-  Transaction:         0x4d8...945
-  From:                0xf39...266
-  Value:               0 ETH
-  Gas used:            323170 of 323170
-  Block #1:            0xee6...85d
-
-eth_chainId
-eth_getTransactionByHash
-eth_blockNumber
-eth_chainId (2)
-eth_getTransactionReceipt
 
 # result in npx hardhat run Terminal
-Initial Coin Offering (ICO) contract deployed to: 0x5Fb...aa3
+Non Fungible Token contract deployed to: 0x5Fb...aa3
 
 ```
 your can edit deploy network endpoint at `hardhat.config.js`.
@@ -88,14 +44,14 @@ module.exports = {
   networks: {
         {
         localhost: {
-          url: "http://127.0.0.1:8545"
+          url: "http://127.0.0.1:8545",
+          chainId: 1337
         },
         hardhat: {
           // See its defaults
         }
   }
 };
-
 ```
 
 ## Donate
