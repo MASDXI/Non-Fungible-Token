@@ -13,19 +13,19 @@ async function main() {
   // manually to make sure everything is compiled
   // await hre.run('compile');
   const constructor = {
-    name: "",
-    symbol: "",
-    baseURI: ""
+    name: "<YOUR_TOKEN_NAME>",
+    symbol: "<YOUR_TOKEN_SYMBOL>",
+    baseURI: "<YOUR_TOKEN_BASEURI>"
   };
   // We get the contract to deploy
-  const Token = await hre.ethers.getContractFactory("MyNFT");
-  const ERC721 = await Token.deploy(
+  const contract = await hre.ethers.getContractFactory("MyNFT");
+  const token = await contract.deploy(
     constructor.name,
     constructor.symbol,
     constructor.baseURI
   );
-  await ERC721.deployed();
-  console.log("ERC721 deployed to:", ERC721.address);
+  await token.deployed();
+  console.log("ERC721 deployed to:", token.address);
 
   // const Auction = await hre.ethers.getContractFactory("Auction");
   // const auction = await Auction.deploy(ERC721.address)

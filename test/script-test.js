@@ -22,12 +22,12 @@ describe("Non Fungible Token (NFT)", function() {
     await token.deployed();
   });
 
-  it("Mint Non Fungible Token", async function() {
+  it("Mint Non Fungible Token", async () => {
     await token.mint(accounts[0].address,attribute.baseURI);
     expect(await token.balanceOf(accounts[0].address)).to.equal("1");
   });
 
-  it("Transfer Token", async function(){
+  it("Transfer Token", async () => {
     await token.transferFrom(accounts[0].address, accounts[1].address,"1");
     expect(await token.balanceOf(accounts[1].address)).to.equal("1");
   });
@@ -49,19 +49,19 @@ describe("Non Fungible Token (NFT)", function() {
 
   //#################### TODO test-case ####################
 
-  it("Burn Non Fungible Token", async function() {
+  it("Burn Non Fungible Token", async () => {
     console.log("TODO");
     await token.burn(accounts[0].address,TokenId);
     expect(await token.balanceOf(accounts[0].address)).to.equal("0");
   });
 
-  it("Do not have permission to minting token", async function(){
+  it("Do not have permission to minting token", async () =>{
     console.log("TODO");
     const wallet = token.connect(accounts[i]);
     await expect(wallet.mint(accounts[i].address,TokenId)).to.be.reverted
   });
 
-  it("Do not have permission to burning token", async function(){
+  it("Do not have permission to burning token", async () =>{
     console.log("TODO");
     const wallet = token.connect(accounts[i]);
     await expect(wallet.burn(accounts[i].address,TokenId)).to.be.reverted
