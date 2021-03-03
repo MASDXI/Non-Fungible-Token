@@ -26,11 +26,6 @@ async function main() {
   );
   await token.deployed();
   console.log("ERC721 deployed to:", token.address);
-
-  // const Auction = await hre.ethers.getContractFactory("Auction");
-  // const auction = await Auction.deploy(ERC721.address)
-  // await auction.deployed();
-  // console.log("ERC721 deployed to:", auction.address);
 }
 
 // We recommend this pattern to be able to use async/await everywhere
